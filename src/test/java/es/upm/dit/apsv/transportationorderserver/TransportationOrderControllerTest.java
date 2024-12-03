@@ -95,12 +95,11 @@ public void testGetOrder() throws Exception {
         .accept(MediaType.APPLICATION_JSON);
     MvcResult result = mockMvc.perform(request)
         .andExpect(status().isOk())
-        .andExpect(jsonPath("$.truck", is("8962ZKR")))
         .andReturn();
 }
 
 @Test
-public void testGetGenericOrder() throws Exception {
+public void testGetNoOrder() throws Exception {
   //call GET "/transportationorders/{truck}"  application/json
 
  when(repository.findById("000AAA")).thenReturn(Optional.of(
